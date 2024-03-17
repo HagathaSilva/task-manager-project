@@ -28,20 +28,20 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestBody User user) {
+    public ResponseEntity<Void> create(@RequestBody User user) {
         this.userService.createUser(user);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity updateUser(@RequestBody User user, @PathVariable Long id) {
+    public ResponseEntity<Void> updateUser(@RequestBody User user, @PathVariable Long id) {
         user.setId(id);
         this.userService.updateUser(user);
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.userService.delete(id);
         return ResponseEntity.ok().build();
     }

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.taskmanager.entities.User;
-import com.example.taskmanager.repositories.TaskRepository;
 import com.example.taskmanager.repositories.UserRepository;
 
 @Service
