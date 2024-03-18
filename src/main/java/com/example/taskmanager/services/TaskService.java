@@ -30,6 +30,11 @@ public class TaskService {
         return tasks;
     }
 
+    public List<Task> findAllTasks() {
+        List<Task> tasks = this.taskRepository.findAll();
+        return tasks;
+    }
+
     @Transactional
     public Task crateTask(Task task) {
         User user = this.userService.findById(task.getUser().getId());
