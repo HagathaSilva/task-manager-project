@@ -35,6 +35,12 @@ public class TaskController {
         return ResponseEntity.ok().body(tasks);
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Task>> findAllTasks() {
+        List<Task> tasks = this.taskService.findAllTasks();
+        return ResponseEntity.ok().body(tasks);
+    }
+
     @PostMapping
     public ResponseEntity<Void> create(@RequestBody Task task) {
         this.taskService.crateTask(task);
